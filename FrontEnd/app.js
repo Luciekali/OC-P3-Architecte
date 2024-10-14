@@ -55,8 +55,7 @@ function displayFilterBar (works) {{
         filterBar.appendChild(filterItem)
         filterItem.appendChild(filterBtn)
         
-        sectionPortefolio.insertBefore(filterBar, gallery);
-         
+        sectionPortefolio.insertBefore(filterBar, gallery); 
 
 
 
