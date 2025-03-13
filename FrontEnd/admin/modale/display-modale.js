@@ -8,6 +8,8 @@ const works = await response.json();
 
 //***** Si il n'y en a pas, creer modale, modale galerie et affiche la galerie*/
 export async function displayModal() {
+    const response = await fetch("http://localhost:5678/api/works");
+    const works = await response.json();
     let modale = document.querySelector('.modal')
     if ((!modale)) {
         modale = createModal()
@@ -85,6 +87,7 @@ function createModalGallery(modale) {
         event.stopPropagation();
     });
     const overlay = document.querySelector('.overlay')
+
     // Fermeture au clic en dehors de la modale
     overlay.addEventListener('click', (event) => {
         if (
@@ -315,11 +318,17 @@ async function createFormAddPhoto() {
     })
     //Convertit les données du formulaire formulaire et les envoie
     addWorkForm.addEventListener('submit', async (event) => {
-        event.preventDefault()
-        const formData = new FormData(addWorkForm);
-        formData.append("image", imgInput.files[0])
-        await postWork(formData)
+        const imgInput = document.getElementById('imgInput');
+        const title = document.getElementById('title');
+        const category = document.getElementById('category');
 
+        event.preventDefault()
+        const formData = new FormData();
+        formData.append("image", imgInput.files[0]);
+        formData.append("title", title.value);
+        formData.append("category", category.value);
+
+        await postWork(formData);
     })
 
 }

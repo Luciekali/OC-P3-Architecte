@@ -155,7 +155,7 @@ body {
 	margin: auto;
 }
 
-main {
+.main-home-page {
 	margin: 0 17em;
 }
 
@@ -317,8 +317,7 @@ nav button {
 	line-height: 1.2em;
 }
 
-#portfolio h2,
-#login h2 {
+#portfolio h2 {
 	text-align: center;
 	margin-bottom: 2em;
 }
@@ -397,8 +396,7 @@ nav button {
 }
 
 
-#contact,
-#login {
+#contact {
 	width: 50%;
 	margin: auto;
 }
@@ -406,6 +404,10 @@ nav button {
 #contact>*,
 #login>* {
 	text-align: center;
+}
+
+#login {
+	width: 50%;
 }
 
 #contact h2 {
@@ -419,17 +421,20 @@ nav button {
 	margin-top: 30px;
 	display: flex;
 	flex-direction: column;
-	margin-left: 120px;
+	width: 379px;
+}
 
+#contact form {
+	margin-left: 120px;
 }
 
 #contact input,
 #login input {
-	height: 36px;
-	width: 379px;
 	font-size: 1em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	padding: 16px 24px;
+	text-align: center;
 }
 
 #contact label,
@@ -437,11 +442,17 @@ nav button {
 	margin: 2em 0 1em 0;
 }
 
+#contact input[type="submit"],
+#login input[type="submit"] {
+	width: 179px
+}
+
 #contact textarea {
-	width: 379px;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
+
+
 
 input[type="submit"],
 .add-photo-btn,
@@ -451,10 +462,9 @@ input[type="submit"],
 	font-weight: 700;
 	color: white;
 	background-color: #1D6154;
-	margin: 2em auto;
-	width: 30% !important;
+	margin: 2em 0;
 	border-radius: 60px;
-	margin-left: 5em;
+	align-self: center;
 	transition: all ease-in-out 0.2s;
 }
 
@@ -473,8 +483,8 @@ input[type="submit"]:hover,
 #login a {
 	color: #3D3D3D;
 	width: 100%;
-	text-align: start;
-	margin-left: 7em;
+	text-align: center;
+
 }
 
 #email.errorInput,
@@ -568,6 +578,7 @@ footer {
 	grid-column-gap: 10px;
 	grid-row-gap: 20px;
 	align-self: center;
+	overflow: auto;
 }
 
 .modal-content.galleryModal figure {

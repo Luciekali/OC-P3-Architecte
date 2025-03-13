@@ -24,20 +24,12 @@ async function displayHomePage() {
 
         for (const category of categories) {
             const filterBtn = displayFilterBtn(category, filterBar)
+            //***** Evenement qui affiche les travaux par catégorie *****/
             filterBtn.addEventListener('click', () => {
                 document.querySelector(".gallery").innerHTML = "";
-                displayFilteredworks(works, categories);
+                displayFilteredworks(works, category);
             })
         }
-
-        //***** Evenement qui affiche les travaux par catégorie *****/
-        const filterBtns = document.querySelectorAll(".filter-btn");
-        filterBtns.forEach((filterBtn, index) => {
-            filterBtn.addEventListener("click", () => {
-                document.querySelector(".gallery").innerHTML = "";
-                displayFilteredworks(works, categories[index]);
-            });
-        });
 
         //***** Evenement qui reset / affiche tous les travaux *****//
         const resetBtn = createResetBtn(filterBar);

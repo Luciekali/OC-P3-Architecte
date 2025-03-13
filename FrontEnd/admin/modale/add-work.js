@@ -56,10 +56,11 @@ async function addWorkReponse(response) {
         const works = await resetIndexWork();
         const pageGallery = document.querySelector('.gallery')
         pageGallery.innerHTML = ''
-        removeModal()
+
         for (const work of works) {
             displayWork(work)
         }
+        removeModal()
         alert("votre photo a été ajoutée avec succès!")
     }
 }
@@ -91,7 +92,7 @@ export async function checkImageProperties() {
         }
     }
     else {
-        if ((imageProperties.size < 41943040) && ((imageProperties.type === 'image/png') || (imageProperties.type === "image/jpg"))) {
+        if ((imageProperties.size < 41943040) && ((imageProperties.type === 'image/png') || (imageProperties.type === "image/jpg")) && (imageProperties !== null)) {
             checkInputs.img = true;
             verifiedImgDisplay(imageProperties)
         }
@@ -133,11 +134,15 @@ export function submitBtnActivation() {
 //***** Recupère l'URL de l'image envoyée pour l'afficher sur la modale */
 function verifiedImgDisplay(img) {
     const div = document.querySelector('.div-img-form')
-
+    const icon = document.querySelector('.fa-regular')
+    const label = document.querySelector('.img-form-label')
+    const paragraph = document.querySelector('.img-form-infos')
     const reader = new FileReader()
 
     reader.onload = function (event) {
-        div.innerHTML = "";
+        icon.remove()
+        label.remove()
+        paragraph.remove()
         const verifiedImg = document.createElement('img');
 
         verifiedImg.src = event.target.result
