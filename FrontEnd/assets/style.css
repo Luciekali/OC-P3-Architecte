@@ -319,15 +319,17 @@ nav button {
 
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 2em;
 }
 
 
 .edition-title-div {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	margin-bottom: 5em;
 }
+
+.edition-title-div h2 {}
 
 .edition-btn {
 	border: none;
@@ -338,7 +340,6 @@ nav button {
 	font-family: 'Work Sans';
 	align-items: center;
 	cursor: pointer;
-	padding-bottom: 2em;
 	padding-left: 3em;
 }
 
