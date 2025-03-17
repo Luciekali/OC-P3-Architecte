@@ -321,15 +321,12 @@ nav button {
 	text-align: center;
 }
 
-
 .edition-title-div {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 5em;
 }
-
-.edition-title-div h2 {}
 
 .edition-btn {
 	border: none;
